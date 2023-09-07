@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.programming.techie</groupId>
     <artifactId>springboot3-observability</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>springboot3-observability</name>
     <description>springboot3-observability</description>
     <packaging>pom</packaging>
@@ -21,6 +21,22 @@
         <module>loan-service</module>
         <module>fraud-detection-service</module>
     </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <repositories>
         <repository>
             <id>spring-milestones</id>

@@ -6,7 +6,11 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['prometheus:9090']
-  - job_name: 'apps'
+  - job_name: 'loan-service'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['localhost:8080']
+      - targets: ['host.docker.internal:8080'] ## only for demo purposes don't use host.docker.internal in production
+  - job_name: 'fraud-detection'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['host.docker.internal:8081'] ## only for demo purposes don't use host.docker.internal in production

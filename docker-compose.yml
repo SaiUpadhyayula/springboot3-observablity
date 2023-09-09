@@ -5,13 +5,11 @@ services:
     container_name: mysqldb
     environment:
       MYSQL_ROOT_PASSWORD: mysql
-      MYSQL_DATABASE: sb3_observability
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
     ports:
       - "3316:3306"
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
   tempo:
     image: grafana/tempo:2.2.2
     command: [ "-config.file=/etc/tempo.yaml" ]

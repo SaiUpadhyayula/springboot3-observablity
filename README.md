@@ -1,7 +1,6 @@
 # Spring Boot 3 Observability with Grafana Stack
 
-This project contains the source code for the [Spring Boot 3 Observability with Grafana Stack]
-(https://youtu.be/PT2yZTBnUwQ?feature=shared) video.
+This project contains the source code for the [Spring Boot 3 Observability with Grafana Stack](https://youtu.be/PT2yZTBnUwQ?feature=shared) video.
 ## Running the project
 
 To run the project, you need to have Docker and Docker Compose installed. Then, run the following command:
